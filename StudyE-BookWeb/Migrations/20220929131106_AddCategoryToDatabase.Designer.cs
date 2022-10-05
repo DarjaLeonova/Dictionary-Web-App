@@ -12,8 +12,8 @@ using StudyE_BookWeb.Data;
 namespace StudyE_BookWeb.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220929130244_AddCategoryToDatabase")]
-    partial class AddCategoryToDatabase
+    [Migration("20220929131106_AddDictionaryToDatabase")]
+    partial class AddDictionaryToDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,7 +24,7 @@ namespace StudyE_BookWeb.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("StudyE_BookWeb.Models.Category", b =>
+            modelBuilder.Entity("StudyE_BookWeb.Models.Dictionary", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -35,8 +35,9 @@ namespace StudyE_BookWeb.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("DisplayOrder")
-                        .HasColumnType("int");
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -44,7 +45,7 @@ namespace StudyE_BookWeb.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Definitions");
                 });
 #pragma warning restore 612, 618
         }

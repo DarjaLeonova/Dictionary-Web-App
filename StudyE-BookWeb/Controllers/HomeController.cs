@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using StudyE_BookWeb.Models;
 using System.Diagnostics;
 
@@ -15,6 +16,7 @@ namespace StudyE_BookWeb.Controllers
 
         public IActionResult Index()
         {
+            _logger.Log(LogLevel.Information, "index view is loaded");
             return View();
         }
 

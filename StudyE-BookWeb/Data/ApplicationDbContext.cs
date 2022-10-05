@@ -9,6 +9,6 @@ namespace StudyE_BookWeb.Data
         {   
         }
 
-        public DbSet<Category> Categories { get; set; }
+        public DbSet<Dictionary> Definitions { get; set; }
     }
 }
